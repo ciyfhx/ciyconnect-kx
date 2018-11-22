@@ -1,0 +1,2 @@
+rootProject.name = 'ciyconnect-kx'
+include ':library', ':test'

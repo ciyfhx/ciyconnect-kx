@@ -1,0 +1,29 @@
+
+sourceSets {
+    main.java.srcDir 'src/test/java'
+    main.kotlin.srcDir 'src/test/kotlin'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    api project(':library')
+    testCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
+}
+
+
+task runServer(type: JavaExec){
+    classpath sourceSets.test.runtimeClasspath
+    main  = 'com.ciyfhx.test.ServerTestKt'
+    standardInput = System.in
+}
+
+task runClient(type: JavaExec){
+    classpath sourceSets.test.runtimeClasspath
+    main = 'com.ciyfhx.test.ClientTestKt'
+}

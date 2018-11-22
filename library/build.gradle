@@ -1,0 +1,41 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7.3"
+
+
+}
+
+
+ext.libversion = '0.0.1'
+version "${libversion}"
+archivesBaseName = "ciyconnect"
+
+
+sourceSets {
+    main.java.srcDir 'src/main/java'
+    main.kotlin.srcDir 'src/main/kotlin'
+}
+
+compileJava {
+    options.compilerArgs += ["-Xlint:unchecked"]
+}
+
+bintray {
+    user = project.property('bintray.user')
+    key = project.property('bintray.apikey')
+    println user
+    println key
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'CiyConnect-kx'
+        userOrg = user
+        licenses = ['GPL-2.0+CE']
+        vcsUrl = 'https://github.com/ciyfhx/CiyConnect.git'
+        version {
+            name = "${libversion}"
+            desc = 'A Kotlin extension for CiyConnect'
+            vcsTag = "${libversion}"
+            publish = true
+        }
+    }
+}
