@@ -7,7 +7,7 @@ plugins {
 
 ext.libversion = '0.0.1'
 version "${libversion}"
-archivesBaseName = "ciyconnect"
+archivesBaseName = "ciyconnect-kx"
 
 
 sourceSets {

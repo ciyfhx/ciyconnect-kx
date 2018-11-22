@@ -13,7 +13,6 @@ dependencies {
     api project(':library')
     testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
 }
 
 
